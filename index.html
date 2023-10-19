@@ -47,16 +47,6 @@
     <p>Fan Status: <span id="fan_status"></span></p>
     <p>Red LED Brightness: <span id="red_led_brightness"></span></p>
     <p>Blue LED Brightness: <span id="blue_led_brightness"></span></p>
-    
-    <p>Control Devices:</p>
-    <a href="/control?device=fan&status=on"><button class="button">Turn On Fan</button></a>
-    <a href="/control?device=fan&status=off"><button class="button button2">Turn Off Fan</button></a>
-    <a href="/control?device=red_led&status=on"><button class="button">Turn On Red LED</button></a>
-    <a href="/control?device=red_led&status=off"><button class="button button2">Turn Off Red LED</button></a>
-    <a href="/control?device=blue_led&status=on"><button class="button">Turn On Blue LED</button></a>
-    <a href="/control?device=blue_led&status=off"><button class="button button2">Turn Off Blue LED</button></a>
-    <a href="/control?device=buzzer&status=on"><button class="button">Turn On Buzzer</button></a>
-    <a href="/control?device=buzzer&status=off"><button class="button button2">Turn Off Buzzer</button></a>
 
     <script>
         // Function to fetch and update ThingSpeak data
@@ -67,7 +57,7 @@
                     const feed = data.feeds[0];
                     document.getElementById('temperature').textContent = `Temperature: ${feed.field1}`;
                     document.getElementById('humidity').textContent = `Humidity: ${feed.field2} `;
-                    document.getElementById('distance').textContent = `Distance: ${feed.field3} cm`;
+                    document.getElementById('distance').textContent = `Distance: ${feed.field3} `;
                     document.getElementById('fan_status').textContent = `Fan Status: ${feed.field4}`;
                     document.getElementById('red_led_brightness').textContent = `Red LED Brightness: ${feed.field5}`;
                     document.getElementById('blue_led_brightness').textContent = `Blue LED Brightness: ${feed.field6}`;
