@@ -1,7 +1,41 @@
-<!DOCTYPE html>
-<html>
-<head>
+html = """<html><head>
     <title>ThingSpeak Data</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="data:,">
+    <style>
+        html {
+            font-family: Helvetica;
+            display: inline-block;
+            margin: 0px auto;
+            text-align: center;
+        }
+
+        h1 {
+            color: #0F3376;
+            padding: 2vh;
+        }
+
+        p {
+            font-size: 1.5rem;
+        }
+
+        .button {
+            display: inline-block;
+            background-color: #e7bd3b;
+            border: none;
+            border-radius: 4px;
+            color: white;
+            padding: 16px 40px;
+            text-decoration: none;
+            font-size: 30px;
+            margin: 2px;
+            cursor: pointer;
+        }
+
+        .button2 {
+            background-color: #4286f4;
+        }
+    </style>
 </head>
 <body>
     <h1>ThingSpeak Data</h1>
@@ -15,7 +49,7 @@
     <script>
         // Function to fetch and update ThingSpeak data
         function updateThingSpeakData() {
-            fetch('https://api.thingspeak.com/channels/2312442/feeds.json?results=1')
+            fetch('https://api.thingspeak.com/channels/YOUR_CHANNEL_ID/feeds.json?results=1')
                 .then(response => response.json())
                 .then(data => {
                     const feed = data.feeds[0];
@@ -32,8 +66,13 @@
         // Call the function to update ThingSpeak data
         updateThingSpeakData();
 
-        // Refresh the data every 5 seconds (adjust the interval as needed)
+        // Refresh the data every 5 seconds
         setInterval(updateThingSpeakData, 5000);
+
+        // Reload the page automatically after 3 seconds
+        setTimeout(function() {
+            location.reload();
+        }, 3000);
     </script>
 </body>
 </html>
