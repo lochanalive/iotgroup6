@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>ThingSpeak Data</title>
+    <title>Group 6 ThingSpeak Data</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="data:,">
     <style>
@@ -40,7 +40,7 @@
     </style>
 </head>
 <body>
-    <h1>ThingSpeak Data</h1>
+    <h1>Group 6 ThingSpeak Data</h1>
     <p>Temperature: <span id="temperature"></span> &deg;C</p>
     <p>Humidity: <span id="humidity"></span> %</p>
     <p>Distance: <span id="distance"></span> cm</p>
@@ -68,13 +68,8 @@
         // Call the function to update ThingSpeak data
         updateThingSpeakData();
 
-        // Refresh the data every 5 seconds
-        setInterval(updateThingSpeakData, 5000);
-
-        // Reload the page automatically after 3 seconds
-        setTimeout(function() {
-            location.reload();
-        }, 3000);
+        // Refresh the data every 1 second (adjust the interval as needed)
+        setInterval(updateThingSpeakData, 1000);
     </script>
 </body>
 </html>
