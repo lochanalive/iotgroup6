@@ -49,14 +49,14 @@
     <p>Blue LED Brightness: <span id="blue_led_brightness"></span></p>
     
     <p>Control Devices:</p>
-    <a href="/?led1=on"><button class="button">Turn On LED1</button></a>
-    <a href="/?led1=off"><button class="button button2">Turn Off LED1</button></a>
-    <a href="/?led2=on"><button class="button">Turn On LED2</button></a>
-    <a href="/?led2=off"><button class="button button2">Turn Off LED2</button></a>
-    <a href="/?buzzer=on"><button class="button">Turn On Buzzer</button></a>
-    <a href="/?buzzer=off"><button class="button button2">Turn Off Buzzer</button></a>
-    <a href="/?fan=on"><button class="button">Turn On Fan</button></a>
-    <a href="/?fan=off"><button class="button button2">Turn Off Fan</button></a>
+    <a href="/control?device=fan&status=on"><button class="button">Turn On Fan</button></a>
+    <a href="/control?device=fan&status=off"><button class="button button2">Turn Off Fan</button></a>
+    <a href="/control?device=red_led&status=on"><button class="button">Turn On Red LED</button></a>
+    <a href="/control?device=red_led&status=off"><button class="button button2">Turn Off Red LED</button></a>
+    <a href="/control?device=blue_led&status=on"><button class="button">Turn On Blue LED</button></a>
+    <a href="/control?device=blue_led&status=off"><button class="button button2">Turn Off Blue LED</button></a>
+    <a href="/control?device=buzzer&status=on"><button class="button">Turn On Buzzer</button></a>
+    <a href="/control?device=buzzer&status=off"><button class="button button2">Turn Off Buzzer</button></a>
 
     <script>
         // Function to fetch and update ThingSpeak data
