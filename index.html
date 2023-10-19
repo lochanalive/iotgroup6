@@ -65,8 +65,8 @@
                 .then(response => response.json())
                 .then(data => {
                     const feed = data.feeds[0];
-                    document.getElementById('temperature').textContent = `Temperature: ${feed.field1} &deg;C`;
-                    document.getElementById('humidity').textContent = `Humidity: ${feed.field2} %`;
+                    document.getElementById('temperature').textContent = `Temperature: ${feed.field1}`;
+                    document.getElementById('humidity').textContent = `Humidity: ${feed.field2} `;
                     document.getElementById('distance').textContent = `Distance: ${feed.field3} cm`;
                     document.getElementById('fan_status').textContent = `Fan Status: ${feed.field4}`;
                     document.getElementById('red_led_brightness').textContent = `Red LED Brightness: ${feed.field5}`;
