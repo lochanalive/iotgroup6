@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Group 6 ThingSpeak Data</title>
+    <title>Group 6 IoT Control</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="data:,">
     <style>
@@ -40,13 +40,23 @@
     </style>
 </head>
 <body>
-    <h1>Group 6 ThingSpeak Data</h1>
+    <h1>Group 6 IoT Control</h1>
     <p>Temperature: <span id="temperature"></span> &deg;C</p>
     <p>Humidity: <span id="humidity"></span> %</p>
     <p>Distance: <span id="distance"></span> cm</p>
     <p>Fan Status: <span id="fan_status"></span></p>
     <p>Red LED Brightness: <span id="red_led_brightness"></span></p>
     <p>Blue LED Brightness: <span id="blue_led_brightness"></span></p>
+    
+    <p>Control Devices:</p>
+    <a href="/?led1=on"><button class="button">Turn On LED1</button></a>
+    <a href="/?led1=off"><button class="button button2">Turn Off LED1</button></a>
+    <a href="/?led2=on"><button class="button">Turn On LED2</button></a>
+    <a href="/?led2=off"><button class="button button2">Turn Off LED2</button></a>
+    <a href="/?buzzer=on"><button class="button">Turn On Buzzer</button></a>
+    <a href="/?buzzer=off"><button class="button button2">Turn Off Buzzer</button></a>
+    <a href="/?fan=on"><button class="button">Turn On Fan</button></a>
+    <a href="/?fan=off"><button class="button button2">Turn Off Fan</button></a>
 
     <script>
         // Function to fetch and update ThingSpeak data
@@ -55,12 +65,12 @@
                 .then(response => response.json())
                 .then(data => {
                     const feed = data.feeds[0];
-                    document.getElementById('temperature').textContent = feed.field1;
-                    document.getElementById('humidity').textContent = feed.field2;
-                    document.getElementById('distance').textContent = feed.field3;
-                    document.getElementById('fan_status').textContent = feed.field4;
-                    document.getElementById('red_led_brightness').textContent = feed.field5;
-                    document.getElementById('blue_led_brightness').textContent = feed.field6;
+                    document.getElementById('temperature').textContent = `Temperature: ${feed.field1} &deg;C`;
+                    document.getElementById('humidity').textContent = `Humidity: ${feed.field2} %`;
+                    document.getElementById('distance').textContent = `Distance: ${feed.field3} cm`;
+                    document.getElementById('fan_status').textContent = `Fan Status: ${feed.field4}`;
+                    document.getElementById('red_led_brightness').textContent = `Red LED Brightness: ${feed.field5}`;
+                    document.getElementById('blue_led_brightness').textContent = `Blue LED Brightness: ${feed.field6}`;
                 })
                 .catch(error => console.error(error));
         }
