@@ -49,7 +49,7 @@ html = """<html><head>
     <script>
         // Function to fetch and update ThingSpeak data
         function updateThingSpeakData() {
-            fetch('https://api.thingspeak.com/channels/YOUR_CHANNEL_ID/feeds.json?results=1')
+            fetch('https://api.thingspeak.com/channels/2312442/feeds.json?results=1')
                 .then(response => response.json())
                 .then(data => {
                     const feed = data.feeds[0];
