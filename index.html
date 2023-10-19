@@ -15,7 +15,7 @@
     <script>
         // Function to fetch and update ThingSpeak data
         function updateThingSpeakData() {
-            fetch('https://thingspeak.com/channels/2312442')
+            fetch('https://api.thingspeak.com/channels/2312442/feeds.json?results=1')
                 .then(response => response.json())
                 .then(data => {
                     const feed = data.feeds[0];
