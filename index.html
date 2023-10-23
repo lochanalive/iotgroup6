@@ -44,9 +44,10 @@
     <p>Temperature: <span id="temperature"></span> &deg;C</p>
     <p>Humidity: <span id="humidity"></span> %</p>
     <p>Distance: <span id="distance"></span> cm</p>
-    <p>Fan Status: <span id="fan_status"></span></p>
-    <p>Red LED Brightness: <span id="red_led_brightness"></span></p>
-    <p>Blue LED Brightness: <span id="blue_led_brightness"></span></p>
+    <p id="fanStatus"></p>
+    <p id="objectStatus"></p>
+    <p id="redLedStatus"></p>
+    <p id="blueLedStatus"></p>
 
     <script>
         // Function to fetch and update ThingSpeak data
@@ -57,10 +58,39 @@
                     const feed = data.feeds[0];
                     document.getElementById('temperature').textContent = `Temperature: ${feed.field1}`;
                     document.getElementById('humidity').textContent = `Humidity: ${feed.field2} `;
-                    document.getElementById('distance').textContent = `Distance: ${feed.field3} `;
-                    document.getElementById('fan_status').textContent = `Fan Status: ${feed.field4}`;
-                    document.getElementById('red_led_brightness').textContent = `Red LED Brightness: ${feed.field5}`;
-                    document.getElementById('blue_led_brightness').textContent = `Blue LED Brightness: ${feed.field6}`;
+                    document.getElementById('distance').textContent = `Distance: ${feed.field3} cm`;
+
+                    // Fan Status
+                    const fanSpeed = parseInt(feed.field4);
+                    if (fanSpeed > 0) {
+                        document.getElementById('fanStatus').textContent = `Fan Status: ON \t Fan Speed: ${fanSpeed}`;
+                    } else {
+                        document.getElementById('fanStatus').textContent = `Fan Status: OFF`;
+                    }
+
+                    // Object Detection
+                    const objectDetected = parseInt(feed.field7);
+                    if (objectDetected === 1) {
+                        document.getElementById('objectStatus').textContent = `Object: YES \t Distance: ${feed.field3} cm`;
+                    } else {
+                        document.getElementById('objectStatus').textContent = `Object: NO`;
+                    }
+
+                    // Red LED Status
+                    const redLedBrightness = parseInt(feed.field5);
+                    if (redLedBrightness > 0) {
+                        document.getElementById('redLedStatus').textContent = `Red LED Status: ON \t Red LED Brightness: ${redLedBrightness}`;
+                    } else {
+                        document.getElementById('redLedStatus').textContent = `Red LED Status: OFF`;
+                    }
+
+                    // Blue LED Status
+                    const blueLedBrightness = parseInt(feed.field6);
+                    if (blueLedBrightness > 0) {
+                        document.getElementById('blueLedStatus').textContent = `Blue LED Status: ON \t Blue LED Brightness: ${blueLedBrightness}`;
+                    } else {
+                        document.getElementById('blueLedStatus').textContent = `Blue LED Status: OFF`;
+                    }
                 })
                 .catch(error => console.error(error));
         }
