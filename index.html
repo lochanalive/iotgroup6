@@ -44,7 +44,7 @@
     <h3>Group 6</h3>
     <p>Temperature: <span id="temperature"></span> &deg;C</p>
     <p>Humidity: <span id="humidity"></span> %</p>
-    <p>Distance: <span id="distance"></span> cm</p>
+    <p>Distance: <span id="distance"></span></p>
     <p id="fanStatus"></p>
     <p id="objectStatus"></p>
     <p id="redLedStatus"></p>
@@ -62,7 +62,7 @@
                     document.getElementById('distance').textContent = `Distance: ${feed.field3} cm`;
 
                     // Fan Status
-                    const fanSpeed = parseInt(feed.field3);
+                    const fanSpeed = parseInt(feed.field4);
                     if (fanSpeed > 0) {
                         document.getElementById('fanStatus').textContent = `Fan Status: ON \t Fan Speed: ${fanSpeed}`;
                     } else {
@@ -78,7 +78,7 @@
                     }
 
                     // Red LED Status
-                    const redLedBrightness = parseInt(feed.field4);
+                    const redLedBrightness = parseInt(feed.field5);
                     if (redLedBrightness > 0) {
                         document.getElementById('redLedStatus').textContent = `Red LED Status: ON \t Red LED Brightness: ${redLedBrightness}`;
                     } else {
@@ -86,7 +86,7 @@
                     }
 
                     // Blue LED Status
-                    const blueLedBrightness = parseInt(feed.field5);
+                    const blueLedBrightness = parseInt(feed.field6);
                     if (blueLedBrightness > 0) {
                         document.getElementById('blueLedStatus').textContent = `Blue LED Status: ON \t Blue LED Brightness: ${blueLedBrightness}`;
                     } else {
