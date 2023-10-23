@@ -71,7 +71,7 @@
 
                     // Object Detection
                     const objectDetected = parseInt(feed.field3);
-                    if (objectDetected === 1) {
+                    if (objectDetected >= 1) {
                         document.getElementById('objectStatus').textContent = `Object: YES \t Distance: ${objectDetected}`;
                     } else {
                         document.getElementById('objectStatus').textContent = `Object: NO`;
@@ -87,7 +87,7 @@
 
                     // Blue LED Status
                     const blueLedBrightness = parseInt(feed.field6);
-                    if (blueLedBrightness > 0) {
+                    if (objectDetected >= 1) {
                         document.getElementById('blueLedStatus').textContent = `Blue LED Status: ON \t Blue LED Brightness: ${blueLedBrightness}`;
                     } else {
                         document.getElementById('blueLedStatus').textContent = `Blue LED Status: OFF`;
