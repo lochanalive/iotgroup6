@@ -40,11 +40,10 @@
     </style>
 </head>
 <body>
-    <h1>ThingSpeak Data Retrieval</h1>
-    <h3>Group 6</h3>
+    <h1>ThingSpeak Data Retrieval Group 6</h1>
     <p>Temperature: <span id="temperature"></span> &deg;C</p>
     <p>Humidity: <span id="humidity"></span> %</p>
-    <p>Distance: <span id="distance"></span></p>
+  
     <p id="fanStatus"></p>
     <p id="objectStatus"></p>
     <p id="redLedStatus"></p>
@@ -59,7 +58,8 @@
                     const feed = data.feeds[0];
                     document.getElementById('temperature').textContent = `${feed.field1}`;
                     document.getElementById('humidity').textContent = `${feed.field2} `;
-                    document.getElementById('distance').textContent = `${feed.field3}`;
+                    
+                    
 
                     // Fan Status
                     const fanSpeed = parseInt(feed.field4);
