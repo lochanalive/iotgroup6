@@ -62,7 +62,7 @@
                     document.getElementById('distance').textContent = `Distance: ${feed.field3} cm`;
 
                     // Fan Status
-                    const fanSpeed = parseInt(feed.field4);
+                    const fanSpeed = parseInt(feed.field3);
                     if (fanSpeed > 0) {
                         document.getElementById('fanStatus').textContent = `Fan Status: ON \t Fan Speed: ${fanSpeed}`;
                     } else {
@@ -70,15 +70,15 @@
                     }
 
                     // Object Detection
-                    const objectDetected = parseInt(feed.field7);
+                    const objectDetected = parseInt(feed.field3);
                     if (objectDetected === 1) {
-                        document.getElementById('objectStatus').textContent = `Object: YES \t Distance: ${feed.field3}`;
+                        document.getElementById('objectStatus').textContent = `Object: YES \t Distance: ${objectDetected}`;
                     } else {
                         document.getElementById('objectStatus').textContent = `Object: NO`;
                     }
 
                     // Red LED Status
-                    const redLedBrightness = parseInt(feed.field5);
+                    const redLedBrightness = parseInt(feed.field4);
                     if (redLedBrightness > 0) {
                         document.getElementById('redLedStatus').textContent = `Red LED Status: ON \t Red LED Brightness: ${redLedBrightness}`;
                     } else {
@@ -86,7 +86,7 @@
                     }
 
                     // Blue LED Status
-                    const blueLedBrightness = parseInt(feed.field6);
+                    const blueLedBrightness = parseInt(feed.field5);
                     if (blueLedBrightness > 0) {
                         document.getElementById('blueLedStatus').textContent = `Blue LED Status: ON \t Blue LED Brightness: ${blueLedBrightness}`;
                     } else {
