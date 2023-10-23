@@ -57,9 +57,9 @@
                 .then(response => response.json())
                 .then(data => {
                     const feed = data.feeds[0];
-                    document.getElementById('temperature').textContent = `Temperature: ${feed.field1}`;
-                    document.getElementById('humidity').textContent = `Humidity: ${feed.field2} `;
-                    document.getElementById('distance').textContent = `Distance: ${feed.field3} cm`;
+                    document.getElementById('temperature').textContent = `${feed.field1}`;
+                    document.getElementById('humidity').textContent = `${feed.field2} `;
+                    document.getElementById('distance').textContent = `${feed.field3}`;
 
                     // Fan Status
                     const fanSpeed = parseInt(feed.field4);
@@ -79,7 +79,7 @@
 
                     // Red LED Status
                     const redLedBrightness = parseInt(feed.field5);
-                    if (redLedBrightness > 0) {
+                    if (${feed.field1} > 0) {
                         document.getElementById('redLedStatus').textContent = `Red LED Status: ON \t Red LED Brightness: ${redLedBrightness}`;
                     } else {
                         document.getElementById('redLedStatus').textContent = `Red LED Status: OFF`;
@@ -87,7 +87,7 @@
 
                     // Blue LED Status
                     const blueLedBrightness = parseInt(feed.field6);
-                    if (objectDetected >= 1) {
+                    if (${feed.field3} >= 1) {
                         document.getElementById('blueLedStatus').textContent = `Blue LED Status: ON \t Blue LED Brightness: ${blueLedBrightness}`;
                     } else {
                         document.getElementById('blueLedStatus').textContent = `Blue LED Status: OFF`;
