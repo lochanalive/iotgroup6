@@ -72,7 +72,7 @@
                     // Object Detection
                     const objectDetected = parseInt(feed.field3);
                     if (objectDetected > 0) {
-                        document.getElementById('objectStatus').textContent = `Object: YES \t Distance: '${feed.field2} `;
+                        document.getElementById('objectStatus').textContent = `Object: YES \t Distance: ${feed.field3} `;
                     } else {
                         document.getElementById('objectStatus').textContent = `Object: NO`;
                     }
