@@ -72,7 +72,7 @@
                     // Object Detection
                     const objectDetected = parseInt(feed.field3);
                     if (objectDetected > 0) {
-                        document.getElementById('objectStatus').textContent = `Object: YES \t Distance: ${feed.field3} `;
+                        document.getElementById('objectStatus').textContent = `Object: YES \t Distance: ${feed.field3} Cm`;
                     } else {
                         document.getElementById('objectStatus').textContent = `Object: NO`;
                     }
@@ -80,7 +80,7 @@
                     // Red LED Status
                     const redLedBrightness = parseInt(feed.field5);
                     if (redLedBrightness > 0) {
-                        document.getElementById('redLedStatus').textContent = `Red LED Status: ON \t Red LED Brightness: ${redLedBrightness}`;
+                        document.getElementById('redLedStatus').textContent = `Red LED Status: ON \t Red LED Brightness: ${feed.field5}`;
                     } else {
                         document.getElementById('redLedStatus').textContent = `Red LED Status: OFF`;
                     }
@@ -88,7 +88,7 @@
                     // Blue LED Status
                     const blueLedBrightness = parseInt(feed.field6);
                     if (blueLedBrightness > 0) {
-                        document.getElementById('blueLedStatus').textContent = `Blue LED Status: ON \t Blue LED Brightness: ${blueLedBrightness}`;
+                        document.getElementById('blueLedStatus').textContent = `Blue LED Status: ON \t Blue LED Brightness: ${feed.field6}`;
                     } else {
                         document.getElementById('blueLedStatus').textContent = `Blue LED Status: OFF`;
                     }
